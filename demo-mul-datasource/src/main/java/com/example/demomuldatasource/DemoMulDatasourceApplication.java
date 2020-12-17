@@ -22,10 +22,10 @@ public class DemoMulDatasourceApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws SQLException {
-		showConnection();
+		showSingleConnection();
 	}
 
-	private void showConnection() throws SQLException {
+	private void showSingleConnection() throws SQLException {
 		log.info(dataSource.toString());
 		Connection conn= dataSource.getConnection();
 		log.info(conn.toString());
