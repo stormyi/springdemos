@@ -2,6 +2,7 @@ package com.example.demotransaction;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Slf4j
 public class DemoTransactionApplication implements CommandLineRunner {
 	@Autowired
-	private FruitService fruitService;
+    private FunctionInterface fruitService;
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
