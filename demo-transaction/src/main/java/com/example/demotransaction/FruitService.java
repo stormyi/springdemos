@@ -18,13 +18,13 @@ public class FruitService implements FunctionInterface{
     }
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
-    public void executeThenException() throws NotRollbackException {
+    @Transactional(isolation = Isolation.READ_COMMITTED, rollbackFor = RollbackException.class)
+    public void executeThenException() throws RollbackException {
         jdbcTemplate.update("insert into fruit(name) value(?)", "BBB");
         // 这里少了一个where，居然不报错？？
 //        log.info("BBB有{}条", jdbcTemplate.queryForObject("select count(*) from fruit name='BBB'", Integer.class));
         log.info("BBB有{}条", jdbcTemplate.queryForObject("select count(*) from fruit where name='BBB'", Integer.class));
-        throw new NotRollbackException();
+        throw new RollbackException();
     }
 
     @Override

@@ -1,2 +1,5 @@
 0.0.1-SNAPSHOT
 开启声明式事务demo
+
+0.0.2-SNAPSHOT
+rollbackFor参数指定要回滚的受检查异常
