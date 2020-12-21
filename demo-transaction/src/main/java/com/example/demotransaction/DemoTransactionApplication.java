@@ -30,5 +30,11 @@ public class DemoTransactionApplication implements CommandLineRunner {
 		} catch (Exception e) {
 			log.info("BBB有{}条", jdbcTemplate.queryForObject("select count(*) from fruit where name='BBB'", Integer.class));
 		}
+
+		try{
+			fruitService.invokeExecuteTheException();
+		} catch (Exception e) {
+			log.info("BBB有{}条", jdbcTemplate.queryForObject("select count(*) from fruit where name='BBB'", Integer.class));
+		}
 	}
 }

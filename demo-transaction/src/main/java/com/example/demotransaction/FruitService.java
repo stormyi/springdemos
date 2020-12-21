@@ -28,7 +28,8 @@ public class FruitService implements FunctionInterface{
     }
 
     @Override
-    public void invokeExecuteTheException() {
+    public void invokeExecuteTheException() throws RollbackException {
+        executeThenException();
     }
 
 }
