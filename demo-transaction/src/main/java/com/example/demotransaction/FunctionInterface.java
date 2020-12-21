@@ -4,6 +4,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface FunctionInterface {
     void execute();
-    void executeThenException();
+    void executeThenException() throws NotRollbackException;
     void invokeExecuteTheException();
 }
