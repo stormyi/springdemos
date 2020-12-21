@@ -3,3 +3,6 @@
 
 0.0.2-SNAPSHOT
 rollbackFor参数指定要回滚的受检查异常
+
+0.0.3-SNAPSHOT
+对Transactional注解的理解--关于动态代理

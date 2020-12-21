@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class FruitService implements FunctionInterface{
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private FunctionInterface fruitService;
     @Override
     public void execute() {
 
@@ -29,7 +31,7 @@ public class FruitService implements FunctionInterface{
 
     @Override
     public void invokeExecuteTheException() throws RollbackException {
-        executeThenException();
+        fruitService.executeThenException();
     }
 
 }
