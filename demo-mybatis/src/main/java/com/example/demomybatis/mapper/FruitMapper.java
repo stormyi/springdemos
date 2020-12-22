@@ -9,6 +9,9 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface FruitMapper {
    @Insert("insert into fruits(name, class, count, date) values(#{name}, #{_class}, #{count}, #{date})")
-   @Options(useGeneratedKeys = true)
+   @Options(useGeneratedKeys = true, keyColumn = "id", keyProperty = "id")
    int save(Fruit fruit);
+
+   @Select("select * from fruits where id = #{value}")
+   Fruit findById(int id);
 }
